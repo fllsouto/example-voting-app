@@ -14,7 +14,9 @@ services:
     ports: ["6379"]
 
   worker:
-    build: ./worker
+    build:
+      context: ./worker
+      dockerfile: Dockerfile.j
 
   db:
     image: postgres:9.4
