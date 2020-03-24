@@ -6,7 +6,7 @@ services:
     image: soutoxfll/example-voting-app_vote
     command: python app.py
     volumes:
-      - ./vote:/app
+      - vote-data:/app
     ports:
       - "5000:80"
     networks:
@@ -73,7 +73,7 @@ services:
     image: soutoxfll/example-voting-app_result
     command: nodemon server.js
     volumes:
-      - ./result:/app
+      - result-data:/app
     ports:
       - "5001:80"
     networks:
@@ -107,3 +107,5 @@ networks:
 
 volumes:
   db-data:
+  result-data:
+  vote-data:
